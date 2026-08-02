@@ -168,4 +168,4 @@ questions   (id, topic_id, question_number, type, title, question_text, choices,
 
 ## License
 
-MIT
+MIT © 2026 The Regents of the University of California. See [`LICENSE`](LICENSE).
