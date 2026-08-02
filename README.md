@@ -5,7 +5,7 @@ Build encrypted, timed multiple-choice assignments from a SQLite question bank �
 ![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-**[Live Demo](https://veriqai.github.io/GradeBridge-MQ-Assignment-Maker/)**
+**[Live Demo](https://bridgesuite.github.io/GradeBridge-MQ-Assignment-Maker/)**
 
 ---
 
@@ -18,7 +18,7 @@ Build encrypted, timed multiple-choice assignments from a SQLite question bank �
 **The three-component workflow:**
 
 1. **MQ Assignment Maker** (this app) — Instructor builds the question pool and exports an encrypted assignment file.
-2. **[MQ Student Submission](https://github.com/VeriQAi/GradeBridge-MQ-Student-Submission)** — Student takes the timed quiz and produces an encrypted submission ZIP.
+2. **[MQ Student Submission](https://github.com/BridgeSuite/GradeBridge-MQ-Student-Submission)** — Student takes the timed quiz and produces an encrypted submission ZIP.
 3. **MQ Autograder** (Python, Docker) — Runs in Gradescope, decrypts the submission, scores, returns Gradescope `results.json`.
 
 All three share a single AES-256-GCM key so encrypted files round-trip safely between browser and server.
@@ -33,7 +33,7 @@ All three share a single AES-256-GCM key so encrypted files round-trip safely be
 - **AES-256-GCM encryption** — Exported assignment files cannot be inspected or edited in a text editor; tampering is detected automatically.
 - **Accommodation variants** — One click to generate 1.25x, 1.5x, 2x, or custom-time variants for SDC students. All variants share the same `assignment_id` so the autograder grades them identically.
 - **KaTeX math** — Questions with `katex_present=true` render correctly throughout the pipeline.
-- **Live demo data not required** — The app expects a SQLite question bank with the standard VeriQAI schema (`modules → chapters → topics → questions`). See "Assignment JSON Format" below for the exported shape.
+- **Live demo data not required** — The app expects a SQLite question bank with the standard GradeBridge schema (`modules → chapters → topics → questions`). See "Assignment JSON Format" below for the exported shape.
 
 ---
 
@@ -41,7 +41,7 @@ All three share a single AES-256-GCM key so encrypted files round-trip safely be
 
 ### Build an Assignment
 
-1. Go to the [Live Demo](https://veriqai.github.io/GradeBridge-MQ-Assignment-Maker/).
+1. Go to the [Live Demo](https://bridgesuite.github.io/GradeBridge-MQ-Assignment-Maker/).
 2. Click **Choose File** under "Question bank (.db)" and pick your SQLite database.
 3. Browse modules and chapters in the left panel. Pick a chapter to view its questions.
 4. Filter by status (default: Approved) and difficulty if desired.
@@ -53,7 +53,7 @@ All three share a single AES-256-GCM key so encrypted files round-trip safely be
 ### Local Development
 
 ```bash
-git clone https://github.com/VeriQAi/GradeBridge-MQ-Assignment-Maker.git
+git clone https://github.com/BridgeSuite/GradeBridge-MQ-Assignment-Maker.git
 cd GradeBridge-MQ-Assignment-Maker
 npm install
 npm run dev
@@ -137,7 +137,7 @@ To rotate the key, generate a new 64-character hex string, update all four locat
 
 ## Question Bank Schema
 
-The expected SQLite schema (from the VeriQAI question bank tooling):
+The expected SQLite schema (from the GradeBridge question bank tooling):
 
 ```
 modules     (id, number, title, course)
