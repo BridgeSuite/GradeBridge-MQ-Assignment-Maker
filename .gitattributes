@@ -1,0 +1,24 @@
+
+# ---------------------------------------------------------------------------
+# Line endings, settled once. The same rule the record, ExamPrint and the
+# Student Submission repositories already use.
+#
+# Without it, a file written by a Windows tool and the same file written by a
+# Linux tool differ by their line endings alone, so a real edit hides inside a
+# diff of nothing. Added 8 October 2026, after an editor rewrote a tracked file
+# as CRLF twice in one evening and both times it was caught by eye rather than
+# by anything that would have stopped it.
+# ---------------------------------------------------------------------------
+* text=auto eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.zip binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
